@@ -90,6 +90,10 @@ if (isset($file_full) && is_file($file_full)) {
 		@import "//www.interordi.com/files/css/normalize.css";
 		@import "//www.interordi.com/files/css/base-dark.css";
 
+		body {
+			line-height: 1.5;
+		}
+
 		.structure {
 			display: flex;
 		}
@@ -103,8 +107,8 @@ if (isset($file_full) && is_file($file_full)) {
 		}
 
 		.selected {
-			background-color: rgba(255, 255, 255, 0.2);
-			padding: 3px;
+			background-color: rgba(255, 255, 255, 0.25);
+			padding: 3px 0px;
 		}
 
 		h2 {
@@ -112,7 +116,15 @@ if (isset($file_full) && is_file($file_full)) {
 			padding-top: 10px;
 		}
 
+		ul {
+			margin-bottom: 6px;
+		}
+
 		@media all and (max-width: 700px) {
+			h4 {
+				margin: 0.75rem 0;
+			}
+
 			.structure {
 				display: block;
 			}
@@ -121,7 +133,7 @@ if (isset($file_full) && is_file($file_full)) {
 				width: 100%;
 				border-bottom: 1px dotted #AAA;
 				overflow-y: auto;
-				max-height: 200px;
+				max-height: 150px
 			}
 		}
 
