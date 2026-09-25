@@ -104,7 +104,8 @@ if (isset($file_full) && is_file($file_full)) {
 		}
 
 		.files {
-			width: 250px;
+			margin-right: 12px;
+			min-width: 180px;
 		}
 
 		.files li {
@@ -113,7 +114,6 @@ if (isset($file_full) && is_file($file_full)) {
 
 		.selected {
 			background-color: rgba(255, 255, 255, 0.25);
-			padding: 3px 0px;
 		}
 
 		h2 {
@@ -164,7 +164,7 @@ if (isset($file_full) && is_file($file_full)) {
 				<?php
 				foreach($files as $file_name) {
 					$selected = ($file_name == $file_requested) ? 'selected' : '';
-					echo '	<li><a href="'.$file_name.'" class="'.$selected.'">'.$file_name.'</a></li>';
+					echo '	<li class="'.$selected.'"><a href="'.$file_name.'">'.$file_name.'</a></li>';
 				}
 				?>
 			</ul>
