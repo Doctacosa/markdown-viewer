@@ -46,7 +46,12 @@ if (isset($file_full) && is_file($file_full)) {
 		'max_nesting_level' => 15,
 		'use_underscore' => false,
 	]);
-	$page_content = $converter->convertToHtml(file_get_contents($file_full));
+
+	$markdown_data = file_get_contents($file_full);
+
+	//Replace ==highlights== with the <mark>highlights</mark> syntax
+	$markdown_data = preg_replace('/==(.*?)==/', '<mark>$1</mark>', $markdown_data);
+	$page_content = $converter->convertToHtml($markdown_data);
 
 	//Parse page links
 	$page_content = preg_replace('/\[\[(.*?).md\]\]/is', '<a href="$1">$1</a>', $page_content);
